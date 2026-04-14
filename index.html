@@ -28,7 +28,9 @@ const supabase = createClient(supabaseUrl, supabaseKey);
     async function speichern() { 
       const name = document.getElementById("name").value; 
       const toreA = Number(document.getElementById("toreA").value); 
-      const toreB = Number(document.getElementById("toreB").value); 
+      const toreB = Number(document.getElementById("toreB").value);
+        const teamA = document.getElementById("teamA").value; 
+        const teamB = document.getElementById("teamB").value; 
  
       const { error } = await supabase 
         .from("tipps") 
@@ -36,7 +38,9 @@ const supabase = createClient(supabaseUrl, supabaseKey);
           { 
             name: name, 
             tore_a: toreA, 
-            tore_b: toreB 
+            tore_b: toreB,
+              team_a: teamA,
+              team_b: teamB
           } 
         ]); 
  
